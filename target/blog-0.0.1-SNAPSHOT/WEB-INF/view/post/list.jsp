@@ -10,22 +10,31 @@
 <html>
 <head>
     <title>게시글</title>
+    <%@ include file="../cdn.jsp"%>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>날짜</th>
-            <th>제목</th>
-            <th>사용자</th>
-        </tr>
-        <c:forEach var="post" items="${posts}">
+    <section style="max-width: 1000px; margin:auto;">
+        <table class="table thead-dark table-hover">
+            <thead>
             <tr>
-                <td>${post.registerDateTime}</td>
-                <td><a href="<c:url value='/post/${post.id}' />">${post.title}</a></td>
-                <td>${post.user}</td>
+                <th scope="col">#</th>
+                <th scope="col">닐찌</th>
+                <th scope="col">제목</th>
+                <th scope="col">사용자</th>
             </tr>
-        </c:forEach>
-    </table>
-    <a href="<c:url value='/post/regist' />">새로운 글쓰기</a>
+            </thead>
+            <tbody>
+            <c:forEach var="post" items="${posts}">
+                <tr>
+                    <th scope="row">${post.id}</th>
+                    <td>${post.registerDateTime}</td>
+                    <td><a href="<c:url value='/post/${post.id}' />">${post.title}</a></td>
+                    <td>${post.user}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+        <a href="<c:url value='/post/regist' />">새로운 글쓰기</a>
+    </section>
 </body>
 </html>

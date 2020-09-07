@@ -13,7 +13,6 @@
 <body>
     <h2>글 작성</h2>
     <form action="${post.id}" method="post">
-        <input type="hidden" name="id" value="${post.id}">
         <p>
             <label>제목 : <br>
                 <input type="text" name="title" value="${post.title}">
