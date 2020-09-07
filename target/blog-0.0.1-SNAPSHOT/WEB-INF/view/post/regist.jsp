@@ -9,27 +9,27 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>NEW POST</title>
+    <%@ include file="../cdn.jsp"%>
 </head>
 <body>
-    <h2>글 작성</h2>
-    <form action="regist" method="post">
-        <p>
-            <label>제목 : <br>
-                <input type="text" name="title">
-            </label>
-        </p>
-        <p>
-            <label>내용 : <br>
-                <textarea name="content"></textarea>
-            </label>
-        </p>
-        <p>
-            <label>유저 : <br>
-                <input type="text" name="user">
-            </label>
-        </p>
-        <input type="submit" value="작성 완료">
-    </form>
+    <%@ include file="../header.jsp"%>
+    <section style="max-width: 600px; margin: auto; margin-top:30px;">
+        <form action="regist" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="title ">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" name="content" rows="20"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="title">User</label>
+                <input type="text" class="form-control" id="user" name="user">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </section>
 </body>
 </html>

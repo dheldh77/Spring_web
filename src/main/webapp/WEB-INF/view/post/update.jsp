@@ -8,27 +8,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>POST #${post.id}</title>
+    <%@ include file="../cdn.jsp"%>
 </head>
 <body>
-    <h2>글 작성</h2>
-    <form action="${post.id}" method="post">
-        <p>
-            <label>제목 : <br>
-                <input type="text" name="title" value="${post.title}">
-            </label>
-        </p>
-        <p>
-            <label>내용 : <br>
-                <textarea name="content">${post.content}</textarea>
-            </label>
-        </p>
-        <p>
-            <label>유저 : <br>
-                <input type="text" name="user" value="${post.user}">
-            </label>
-        </p>
-        <input type="submit" value="작성 완료">
-    </form>
+    <%@ include file="../header.jsp"%>
+    <section style="max-width: 600px; margin: auto; margin-top:30px;">
+        <form action="${post.id}" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="${post.title}">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" name="content" rows="20">${post.content}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="title">User</label>
+                <input type="text" class="form-control" id="user" name="user" value="${post.user}">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </section>
 </body>
 </html>

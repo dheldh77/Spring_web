@@ -11,9 +11,14 @@
 <head>
     <title>홈</title>
     <%@ include file="cdn.jsp"%>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>홈 화면</h2>
-    <a href="<c:url value='/post/list' />">글 목록</a>
+    <section style="display: flex; height: 100vh; width: 100%; justify-content: center; align-items: center;">
+        <div style="text-align: center;">
+            <h2 style="font-family: 'Tangerine', cursive; font-size: 6em; letter-spacing: 10px">Blog</h2>
+            <a href="<c:url value='/post/list' />">시작하기 >></a>
+        </div>
+    </section>
 </body>
 </html>
